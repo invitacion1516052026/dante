@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Especial</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle at center, #111 0%, #000 100%);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    h1 {
+      font-size: 3em;
+      letter-spacing: 2px;
+      text-shadow: 0 0 20px #fff, 0 0 40px #00f;
+    }
+
+    .countdown {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+
+    .glow {
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 40px #f0f;
+      }
+    }
+
+    .moonwalk {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      font-size: 1.5em;
+      animation: move 5s linear infinite;
+    }
+
+    @keyframes move {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="glow">Estás Invitado</h1>
+    <p>Prepárate para una noche inolvidable</p>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <div class="moonwalk">🕺 Smooth moves only... ¡No faltes!</div>
+
+  <script>
+    const eventDate = new Date("2026-12-31T00:00:00").getTime();
+
+    const countdown = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `${days} días ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        countdown.innerHTML = "¡El evento comenzó!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
