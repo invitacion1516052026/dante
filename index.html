@@ -5,7 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitación Especial</title>
   <style>
-    
+    .center-img {
+  width: 250px;
+  max-width: 80%;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.6);
+  transition: transform 0.3s ease;
+}
+
+.center-img:hover {
+  transform: scale(1.05);
+}
     body::before {
   content: "";
   position: fixed;
@@ -82,7 +93,11 @@
 <body>
   <div class="container">
     <h1 class="glow">Estás Invitado</h1>
-    <p>Prepárate para una noche inolvidable</p>
+    <p>Cumpleaños dante</p>
+    <!-- IMAGEN CENTRAL -->
+  <img src="mj.png" alt="Imagen central" class="center-img">
+
+  <div class="countdown" id="countdown"></div>
     <div class="countdown" id="countdown"></div>
   </div>
 
