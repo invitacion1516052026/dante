@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitación Especial</title>
   <style>
+    .location {
+  margin-top: 10px;
+  font-size: 1.1em;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: 2px solid #0ff;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.map-btn:hover {
+  background: #0ff;
+  color: black;
+}
     .center-img {
   width: 250px;
   max-width: 80%;
@@ -49,7 +70,7 @@
   min-height: 100vh;         /* altura completa pantalla */
   text-align: center;
 }
-    ..container {
+    .container {
   max-width: 400px;
   width: 90%;
 }
@@ -94,22 +115,29 @@
   </style>
 </head>
 <body>
-  <p class="location">📍 Salón Luna - Viedma</p>
-<a href="https://www.google.com/maps/place/Tercer+Tiempo+Kids/@-40.8097105,-63.0211314,17z/data=!3m1!4b1!4m6!3m5!1s0x95f6bd5605bc163f:0x9f6b0bb4dbaa94ed!8m2!3d-40.8097105!4d-63.0211314!16s%2Fg%2F11gfhdk7vz?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn">
-  Ver en Google Maps
-</a>
-  <div class="container">
-    <h1 class="glow">Estás Invitado</h1>
-    <p>Cumpleaños dante</p>
-    <!-- IMAGEN CENTRAL -->
-  <img src="foto1.png" alt="Imagen central" class="center-img">
 
-  <div class="countdown" id="countdown"></div>
+  <div class="container">
+    
+    <h1 class="glow">Estás Invitado</h1>
+    <p>Cumpleaños Dante</p>
+
+    <!-- UBICACIÓN -->
+    <p class="location">📍 Salón Luna - Viedma</p>
+    <a href="https://www.google.com/maps/place/Tercer+Tiempo+Kids" target="_blank" class="map-btn">
+      Ver en Google Maps
+    </a>
+
+    <!-- IMAGEN -->
+    <img src="foto1.png" alt="Imagen central" class="center-img">
+
+    <!-- CONTADOR -->
     <div class="countdown" id="countdown"></div>
+
   </div>
 
   <div class="moonwalk">🕺¡No faltes!</div>
 
+</body>
   <script>
     const eventDate = new Date("2026-05-26T17:00:00").getTime();
 
