@@ -36,20 +36,23 @@
   z-index: -1;
 }
     
-  body {
+ body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: url('fondo.jpg') no-repeat center center fixed;
+  background: url('mj.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
+
+  display: flex;
+  justify-content: center;   /* centra horizontal */
+  align-items: center;       /* centra vertical */
+  min-height: 100vh;         /* altura completa pantalla */
   text-align: center;
-  overflow: hidden;
 }
-    .container {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+    ..container {
+  max-width: 400px;
+  width: 90%;
+}
 
     h1 {
       font-size: 3em;
