@@ -7,6 +7,45 @@
 <title>Invitación Especial</title>
 
 <style>
+  /* BOTÓN MUSICA */
+
+.music-btn{
+
+  position:fixed;
+
+  top:20px;
+  right:20px;
+
+  padding:10px 18px;
+
+  border:none;
+  border-radius:30px;
+
+  background:rgba(0,0,0,0.6);
+
+  color:white;
+
+  font-size:1em;
+
+  cursor:pointer;
+
+  backdrop-filter: blur(5px);
+
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+
+  transition:0.3s;
+}
+
+.music-btn:hover{
+
+  transform:scale(1.05);
+
+  background:#0ff;
+  color:black;
+
+}
 
 *{
   margin:0;
@@ -293,6 +332,40 @@ setInterval(() => {
 },1000);
 
 </script>
+<!-- MÚSICA -->
 
+<audio id="music" autoplay loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BOTÓN MÚSICA -->
+
+<button class="music-btn" onclick="toggleMusic()">
+  🎵 Música
+</button>
+
+<script>
+
+const music =
+document.getElementById("music");
+
+function toggleMusic(){
+
+  if(music.paused){
+    music.play();
+  }else{
+    music.pause();
+  }
+
+}
+
+</script>
+<script>
+
+document.body.addEventListener("click", () => {
+  music.play();
+}, { once:true });
+
+</script>
 </body>
 </html>
