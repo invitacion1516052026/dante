@@ -1,159 +1,298 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invitación Especial</title>
-  <style>
-    .location {
-  margin-top: 10px;
-  font-size: 1.1em;
-  text-shadow: 0 0 10px #0ff;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Invitación Especial</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-.map-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  border: 2px solid #0ff;
-  border-radius: 20px;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.map-btn:hover {
-  background: #0ff;
-  color: black;
-}
-    .center-img {
-  width: 250px;
-  max-width: 80%;
-  margin: 20px 0;
-  border-radius: 15px;
-  box-shadow: 0 0 30px rgba(255,255,255,0.6);
-  transition: transform 0.3s ease;
-}
-
-.center-img:hover {
-  transform: scale(1.05);
-  
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
+body{
+  font-family: Arial, sans-serif;
   background:
-    url('https://www.transparenttextures.com/patterns/stardust.png'),
-    rgba(0,0,0,0.6);
-
-  opacity: 0.4;
-  z-index: -1;
-}
-    
- body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: url('fondo.jpg') no-repeat center center fixed;
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+    url('fondo.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: white;
+  color:white;
 
-  display: flex;
-  justify-content: center;   /* centra horizontal */
-  align-items: center;       /* centra vertical */
-  min-height: 100vh;         /* altura completa pantalla */
-  text-align: center;
-}
-    .container {
-  max-width: 400px;
-  width: 90%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  min-height:100vh;
+  overflow:hidden;
+  text-align:center;
 }
 
-    h1 {
-      font-size: 3em;
-      letter-spacing: 2px;
-      text-shadow: 0 0 20px #fff, 0 0 40px #00f;
-    }
+/* Partículas/fondo */
 
-    .countdown {
-      font-size: 2em;
-      margin-top: 20px;
-    }
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
 
-    .glow {
-      animation: glow 1.5s infinite alternate;
-    }
+  background:url('https://www.transparenttextures.com/patterns/stardust.png');
 
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #0ff;
-      }
-      to {
-        text-shadow: 0 0 20px #fff, 0 0 40px #f0f;
-      }
-    }
+  opacity:0.3;
+  z-index:-1;
+}
 
-    .moonwalk {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      font-size: 1.5em;
-      animation: move 5s linear infinite;
-    }
+/* CONTENEDOR */
 
-    @keyframes move {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
+.container{
+  width:90%;
+  max-width:450px;
 
-  </style>
+  padding:30px;
+
+  border-radius:25px;
+
+  backdrop-filter: blur(8px);
+
+  background:rgba(0,0,0,0.35);
+
+  box-shadow:
+    0 0 20px rgba(255,255,255,0.2),
+    0 0 40px rgba(0,255,255,0.15);
+}
+
+/* TITULO */
+
+h1{
+  font-size:3em;
+  margin-bottom:10px;
+
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #00f,
+    0 0 40px #0ff;
+}
+
+/* TEXTO */
+
+p{
+  font-size:1.2em;
+}
+
+/* UBICACIÓN */
+
+.location{
+  margin-top:15px;
+  font-size:1.1em;
+  text-shadow:0 0 10px #0ff;
+}
+
+/* BOTÓN */
+
+.map-btn{
+  display:inline-block;
+
+  margin-top:15px;
+  padding:10px 18px;
+
+  border:2px solid #0ff;
+  border-radius:25px;
+
+  color:white;
+  text-decoration:none;
+
+  transition:0.3s;
+}
+
+.map-btn:hover{
+  background:#0ff;
+  color:black;
+
+  box-shadow:0 0 20px #0ff;
+}
+
+/* IMAGEN */
+
+.center-img{
+  width:260px;
+  max-width:85%;
+
+  margin:25px 0;
+
+  border-radius:20px;
+
+  box-shadow:
+    0 0 20px rgba(255,255,255,0.4),
+    0 0 40px rgba(0,255,255,0.3);
+
+  transition:0.4s;
+}
+
+.center-img:hover{
+  transform:scale(1.05);
+}
+
+/* CONTADOR */
+
+.countdown{
+  font-size:2em;
+  margin-top:10px;
+
+  font-weight:bold;
+
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #f0f;
+
+  animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+  from{
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px #0ff;
+  }
+
+  to{
+    text-shadow:
+      0 0 20px #fff,
+      0 0 40px #f0f;
+  }
+}
+
+/* TEXTO MOVIMIENTO */
+
+.moonwalk{
+  position:absolute;
+  bottom:20px;
+
+  width:100%;
+
+  font-size:1.5em;
+
+  animation:move 8s linear infinite;
+}
+
+@keyframes move{
+  0%{
+    transform:translateX(100%);
+  }
+
+  100%{
+    transform:translateX(-100%);
+  }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+
+  h1{
+    font-size:2.2em;
+  }
+
+  .countdown{
+    font-size:1.5em;
+  }
+
+  .moonwalk{
+    font-size:1.2em;
+  }
+
+}
+
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    
-    <h1 class="glow">Estás Invitado</h1>
-    <p>Cumpleaños Dante</p>
+<div class="container">
 
-    <!-- UBICACIÓN -->
-    <p class="location">Tercer Tiempo Kids-Viedma</p>
-    <a href="https://www.google.com/maps/place/Tercer+Tiempo+Kids/@-40.8097105,-63.0211314,17z/data=!3m1!4b1!4m6!3m5!1s0x95f6bd5605bc163f:0x9f6b0bb4dbaa94ed!8m2!3d-40.8097105!4d-63.0211314!16s%2Fg%2F11gfhdk7vz?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-btn">
-      Ver en Google Maps
-    </a>
+  <h1>✨ Estás Invitado ✨</h1>
 
-    <!-- IMAGEN -->
-    <img src="foto2.png" alt="Imagen central" class="center-img">
+  <p>Cumpleaños Dante</p>
 
-    <!-- CONTADOR -->
-    <div class="countdown" id="countdown"></div>
+  <!-- UBICACIÓN -->
 
-  </div>
+  <p class="location">
+    📍 Tercer Tiempo Kids - Viedma
+  </p>
 
-   <div class="moonwalk">🕺¡No faltes!</div>
+  <a
+    href="https://www.google.com/maps/place/Tercer+Tiempo+Kids/"
+    target="_blank"
+    class="map-btn"
+  >
+    Ver en Google Maps
+  </a>
 
-  <script>
-    const eventDate = new Date("2026-05-26T17:00:00").getTime();
-    const countdown = document.getElementById("countdown");
+  <!-- IMAGEN -->
 
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
+  <img
+    src="foto2.png"
+    alt="Imagen central"
+    class="center-img"
+  >
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  <!-- CONTADOR -->
 
-      countdown.innerHTML = `${days} días ${hours}h ${minutes}m ${seconds}s`;
+  <div class="countdown" id="countdown"></div>
 
-      if (distance < 0) {
-        countdown.innerHTML = "🎉 ¡El evento comenzó! 🎉";
-      }
-    }, 1000);
-  </script>
+</div>
+
+<div class="moonwalk">
+  🕺 ¡No faltes!
+</div>
+
+<script>
+
+const eventDate =
+new Date("2026-05-26T17:00:00").getTime();
+
+const countdown =
+document.getElementById("countdown");
+
+setInterval(() => {
+
+  const now = new Date().getTime();
+
+  const distance = eventDate - now;
+
+  const days =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  const hours =
+    Math.floor((distance %
+    (1000 * 60 * 60 * 24))
+    / (1000 * 60 * 60));
+
+  const minutes =
+    Math.floor((distance %
+    (1000 * 60 * 60))
+    / (1000 * 60));
+
+  const seconds =
+    Math.floor((distance %
+    (1000 * 60))
+    / 1000);
+
+  countdown.innerHTML =
+    `${days} días ${hours}h ${minutes}m ${seconds}s`;
+
+  if(distance < 0){
+    countdown.innerHTML =
+    "🎉 ¡El evento comenzó! 🎉";
+  }
+
+},1000);
+
+</script>
 
 </body>
 </html>
