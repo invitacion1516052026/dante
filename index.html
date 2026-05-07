@@ -7,6 +7,43 @@
 <title>Invitación Especial</title>
 
 <style>
+/* FECHA EVENTO */
+
+.event-date{
+
+  margin-top:10px;
+  margin-bottom:15px;
+
+  font-size:1.3em;
+  font-weight:bold;
+
+  color:#fff;
+
+  text-shadow:
+    0 0 10px #0ff,
+    0 0 20px #f0f;
+
+  animation:pulse 2s infinite;
+}
+
+/* EFECTO */
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+  
   /* BOTÓN MUSICA */
 
 .music-btn{
@@ -278,7 +315,12 @@ p{
     alt="Imagen central"
     class="center-img"
   >
+<!-- FECHA EVENTO -->
 
+<div class="event-date">
+  📅 26 de Mayo 2026 - 17:00 hs a 20:00hs
+</div>
+  
   <!-- CONTADOR -->
 
   <div class="countdown" id="countdown"></div>
